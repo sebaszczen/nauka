@@ -9,6 +9,7 @@ public class MyTask {
 
     public int calculate() {
         System.out.println(Thread.currentThread().getName());
+
         try {
             Thread.sleep(duration * 1000);
         } catch (final InterruptedException e) {

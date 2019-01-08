@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="designPatterns" />
         <module name="magic" />
-        <module name="nauka" />
         <module name="nauka (1)" />
+        <module name="springBoot" />
         <module name="tdd" />
       </profile>
     </annotationProcessing>
@@ -18,6 +18,7 @@
       <module name="magic" target="1.8" />
       <module name="nauka" target="1.8" />
       <module name="nauka (1)" target="1.8" />
+      <module name="springBoot" target="1.7" />
       <module name="tdd" target="1.5" />
     </bytecodeTargetLevel>
   </component>

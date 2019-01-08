@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/designPatterns/designPatterns.iml" filepath="$PROJECT_DIR$/designPatterns/designPatterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nauka.iml" filepath="$PROJECT_DIR$/nauka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tdd/nauka (1).iml" filepath="$PROJECT_DIR$/tdd/nauka (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/tdd/tdd.iml" filepath="$PROJECT_DIR$/tdd/tdd.iml" />
+    </modules>
+  </component>
+</project>

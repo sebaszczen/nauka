@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="443ce68e-85b7-4694-a6c6-b8cab30f059d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/magic/magic.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/magic/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/magic/src/main/java/sebaszczen/completableFuture/completableFutureVsParallelStream/CompletableFutureVsParallerStream.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/magic/src/main/java/sebaszczen/completableFuture/completableFutureVsParallelStream/MyTask.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +21,8 @@
       <file leaf-file-name="CompletableFutureVsParallerStream.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/magic/src/main/java/sebaszczen/completableFuture/completableFutureVsParallelStream/CompletableFutureVsParallerStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="164">
+              <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,67 +175,6 @@
             <path>
               <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
               <item name="nauka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sebaszczen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sebaszczen" type="462c0819:PsiDirectoryNode" />
-              <item name="completableFuture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="magic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sebaszczen" type="462c0819:PsiDirectoryNode" />
-              <item name="completableFuture" type="462c0819:PsiDirectoryNode" />
-              <item name="completableFutureVsParallelStream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nauka" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nauka" type="462c0819:PsiDirectoryNode" />
-              <item name="tdd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -542,7 +473,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26893353" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5517774" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -944,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/magic/src/main/java/sebaszczen/completableFuture/completableFutureVsParallelStream/CompletableFutureVsParallerStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="164">
+          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

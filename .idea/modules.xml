@@ -6,7 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/magic/magic.iml" filepath="$PROJECT_DIR$/magic/magic.iml" />
       <module fileurl="file://$PROJECT_DIR$/nauka.iml" filepath="$PROJECT_DIR$/nauka.iml" />
       <module fileurl="file://$PROJECT_DIR$/tdd/nauka (1).iml" filepath="$PROJECT_DIR$/tdd/nauka (1).iml" />
-      <module fileurl="file://$PROJECT_DIR$/tdd/tdd.iml" filepath="$PROJECT_DIR$/tdd/tdd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springBoot/springBoot.iml" filepath="$PROJECT_DIR$/springBoot/springBoot.iml" />
     </modules>
   </component>
 </project>

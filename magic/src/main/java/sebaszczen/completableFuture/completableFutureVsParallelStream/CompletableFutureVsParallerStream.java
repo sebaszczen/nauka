@@ -1,7 +1,10 @@
 package sebaszczen.completableFuture.completableFutureVsParallelStream;
 
+import java.lang.reflect.Executable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -16,9 +19,12 @@ public class CompletableFutureVsParallerStream {
             .collect(toList());
 
     public static void main(String[] args) {
+        completableFuture();
         oneThread();
         parallelThread();
-        completableFuture();
+        List<Integer> collect = completableFuture().stream().map(CompletableFuture::join).collect(Collectors.toList());
+        System.out.println("completable future "+collect);
+        completableFutureWithExecutorService();
     }
 
     private static void oneThread() {
@@ -34,7 +40,7 @@ public class CompletableFutureVsParallerStream {
     }
 
     private static void parallelThread() {
-        LOGGER.info("oneThread");
+        LOGGER.info("parallelThread");
 
         long start = System.nanoTime();
         List<Integer> list = tasks.stream().parallel().map(MyTask::calculate).collect(Collectors.toList());
@@ -43,15 +49,25 @@ public class CompletableFutureVsParallerStream {
         System.out.println(list);
     }
 
-    private static void completableFuture() {
-        LOGGER.info("oneThread");
+    private static List<CompletableFuture<Integer>> completableFuture() {
+        LOGGER.info("completableFuture");
 
         long start = System.nanoTime();
         List<CompletableFuture<Integer>> collect = tasks.stream().
                 map(t -> CompletableFuture.supplyAsync(() -> t.calculate())).collect(Collectors.toList());
         long duration = (System.nanoTime() - start) / 1_000_000;
         System.out.printf("Processed %d tasks in %d millis\n", tasks.size(), duration);
-        System.out.println(collect);
+//        System.out.println(collect);
+        return collect;
     }
 
+    private static void completableFutureWithExecutorService() {
+        LOGGER.info("completableFutureWithExecutorService");
+        ExecutorService executorService= Executors.newFixedThreadPool(10);
+        long start = System.nanoTime();
+        List<CompletableFuture<Void>> collect = tasks.stream().map(a -> CompletableFuture.runAsync(() -> a.calculate(), executorService)).collect(Collectors.toList());
+        List<Void> list = collect.stream().map(CompletableFuture::join).collect(Collectors.toList());
+        long duration = (System.nanoTime() - start) / 1_000_000;
+        System.out.printf("Processed %d tasks in %d millis\n", tasks.size(), duration);
+    }
 }

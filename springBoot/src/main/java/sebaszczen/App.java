@@ -1,8 +1,12 @@
 package sebaszczen;
 
+import com.sun.org.glassfish.gmbal.NameValue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import sebaszczen.configuration.Person;
 
 /**
  * Hello world!
@@ -10,14 +14,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class App 
+public class App implements CommandLineRunner
 {
     @Autowired
-    private static String blue;
+//    @Qualifier("aaa")
+    private Person sdfsdf;
 
     public static void main( String[] args )
     {
         SpringApplication.run(App.class);
-        System.out.println(blue);
+    }
+
+    @Override
+    public void run(String... strings) throws Exception {
+        System.out.println(sdfsdf.getName());
     }
 }

@@ -2,9 +2,7 @@ package sebaszczen.completableFuture.completableFutureVsParallelStream;
 
 import java.lang.reflect.Executable;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -49,6 +47,19 @@ public class CompletableFutureVsParallerStream {
         System.out.println(list);
     }
 
+    private static void parallelThreadFixedThredPool() {
+        LOGGER.info("parallelThread");
+
+        ExecutorService executorService = Executors.newFixedThreadPool(8);
+        ForkJoinPool forkJoinPool = new ForkJoinPool(8);
+
+        long start = System.nanoTime();
+        Future<List<Integer>> submit = executorService.submit(() -> tasks.parallelStream().map(t -> t.calculate()).collect(Collectors.toList()));
+        long duration = (System.nanoTime() - start) / 1_000_000;
+        System.out.printf("Processed %d tasks in %d millis\n", tasks.size(), duration);
+//        System.out.println(list);
+    }
+
     private static List<CompletableFuture<Integer>> completableFuture() {
         LOGGER.info("completableFuture");
 
@@ -57,6 +68,9 @@ public class CompletableFutureVsParallerStream {
                 map(t -> CompletableFuture.supplyAsync(() -> t.calculate())).collect(Collectors.toList());
         long duration = (System.nanoTime() - start) / 1_000_000;
         System.out.printf("Processed %d tasks in %d millis\n", tasks.size(), duration);
+
+        List<Integer> collect2 = collect.stream().map(CompletableFuture::join).collect(Collectors.toList());
+        System.out.println("completable future "+collect2);
 //        System.out.println(collect);
         return collect;
     }

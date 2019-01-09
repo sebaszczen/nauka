@@ -1,17 +1,20 @@
 package sebaszczen.configuration;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 @org.springframework.context.annotation.Configuration
 public class Configuration {
 
-    @Bean(value = "blue")
-    public String blue() {
-        return "blue";
+    @Bean
+//    @Scope("prototype")
+    public Person blue() {
+        return new Person("xxx");
     }
 
     @Bean
-    public String red() {
-        return "red";
+//    @Scope("prototype")
+    public Person red() {
+        return new Person("aaa");
     }
 }

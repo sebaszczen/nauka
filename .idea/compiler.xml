@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="designPatterns" />
         <module name="magic" />
+        <module name="multiThreadsmaster" />
         <module name="nauka (1)" />
         <module name="springBoot" />
         <module name="tdd" />
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="designPatterns" target="1.7" />
       <module name="magic" target="1.8" />
+      <module name="multiThreadsmaster" target="1.8" />
       <module name="nauka" target="1.8" />
       <module name="nauka (1)" target="1.8" />
       <module name="springBoot" target="1.7" />

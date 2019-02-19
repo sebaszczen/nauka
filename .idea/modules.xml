@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/comparePractise/comparePractise.iml" filepath="$PROJECT_DIR$/comparePractise/comparePractise.iml" />
       <module fileurl="file://$PROJECT_DIR$/designPatterns/designPatterns.iml" filepath="$PROJECT_DIR$/designPatterns/designPatterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/magic/magic.iml" filepath="$PROJECT_DIR$/magic/magic.iml" />
       <module fileurl="file://$PROJECT_DIR$/multiThreadsmaster/multiThreadsmaster.iml" filepath="$PROJECT_DIR$/multiThreadsmaster/multiThreadsmaster.iml" />

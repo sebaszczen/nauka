@@ -1,16 +1,17 @@
 package sebaszczen.completableFuture.completableFutureVsParallelStream;
 
-import java.lang.reflect.Executable;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
 public class CompletableFutureVsParallerStream {
-    private static final Logger LOGGER = Logger.getLogger(String.valueOf(CompletableFuture.class));
+    private static final Logger LOGGER = LogManager.getLogger(String.valueOf(CompletableFuture.class));
 
     private static List<MyTask> tasks = IntStream.range(0, 10)
             .mapToObj(i -> new MyTask(1))

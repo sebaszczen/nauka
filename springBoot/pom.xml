@@ -8,7 +8,7 @@
   <artifactId>springBoot</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>springBoot</name>
+  <nazwa>springBoot</nazwa>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -16,24 +16,66 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+
+    <hibernate.version>5.4.0.Final</hibernate.version>
+    <mysql.connector.version>5.1.31</mysql.connector.version>
   </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
+        <version>2.0.1.RELEASE</version>
     </parent>
 
   <dependencies>
     <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml</groupId>
+      <artifactId>classmate</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.10.0</version>
     </dependency>
   </dependencies>
 

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="comparePractise" />
         <module name="designPatterns" />
         <module name="magic" />
         <module name="multiThreadsmaster" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="comparePractise" target="1.8" />
       <module name="designPatterns" target="1.7" />
       <module name="magic" target="1.8" />
       <module name="multiThreadsmaster" target="1.8" />

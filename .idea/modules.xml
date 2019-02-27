@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/comparePractise/comparePractise.iml" filepath="$PROJECT_DIR$/comparePractise/comparePractise.iml" />
       <module fileurl="file://$PROJECT_DIR$/designPatterns/designPatterns.iml" filepath="$PROJECT_DIR$/designPatterns/designPatterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaProxy/javaProxy.iml" filepath="$PROJECT_DIR$/javaProxy/javaProxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/magic/magic.iml" filepath="$PROJECT_DIR$/magic/magic.iml" />
       <module fileurl="file://$PROJECT_DIR$/multiThreadsmaster/multiThreadsmaster.iml" filepath="$PROJECT_DIR$/multiThreadsmaster/multiThreadsmaster.iml" />
       <module fileurl="file://$PROJECT_DIR$/nauka.iml" filepath="$PROJECT_DIR$/nauka.iml" />
       <module fileurl="file://$PROJECT_DIR$/tdd/nauka (1).iml" filepath="$PROJECT_DIR$/tdd/nauka (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/reflection/reflection.iml" filepath="$PROJECT_DIR$/reflection/reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot/springBoot.iml" filepath="$PROJECT_DIR$/springBoot/springBoot.iml" />
     </modules>
   </component>

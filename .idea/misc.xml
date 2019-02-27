@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/springBoot/pom.xml" />
         <option value="$PROJECT_DIR$/multiThreadsmaster/pom.xml" />
         <option value="$PROJECT_DIR$/comparePractise/pom.xml" />
+        <option value="$PROJECT_DIR$/reflection/pom.xml" />
+        <option value="$PROJECT_DIR$/javaProxy/pom.xml" />
       </list>
     </option>
   </component>

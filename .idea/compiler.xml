@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="comparePractise" />
         <module name="designPatterns" />
+        <module name="javaProxy" />
         <module name="magic" />
         <module name="multiThreadsmaster" />
         <module name="nauka (1)" />
+        <module name="reflection" />
         <module name="springBoot" />
         <module name="tdd" />
       </profile>
@@ -18,10 +20,12 @@
     <bytecodeTargetLevel>
       <module name="comparePractise" target="1.8" />
       <module name="designPatterns" target="1.7" />
+      <module name="javaProxy" target="1.8" />
       <module name="magic" target="1.8" />
       <module name="multiThreadsmaster" target="1.8" />
       <module name="nauka" target="1.8" />
       <module name="nauka (1)" target="1.8" />
+      <module name="reflection" target="1.7" />
       <module name="springBoot" target="1.7" />
       <module name="tdd" target="1.5" />
     </bytecodeTargetLevel>

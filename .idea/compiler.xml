@@ -12,6 +12,7 @@
         <module name="magic" />
         <module name="multiThreadsmaster" />
         <module name="nauka (1)" />
+        <module name="recrutationTasks" />
         <module name="reflection" />
         <module name="springBoot" />
         <module name="tdd" />
@@ -25,6 +26,7 @@
       <module name="multiThreadsmaster" target="1.8" />
       <module name="nauka" target="1.8" />
       <module name="nauka (1)" target="1.8" />
+      <module name="recrutationTasks" target="1.8" />
       <module name="reflection" target="1.7" />
       <module name="springBoot" target="1.7" />
       <module name="tdd" target="1.5" />

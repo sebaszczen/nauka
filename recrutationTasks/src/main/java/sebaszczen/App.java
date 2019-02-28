@@ -58,7 +58,7 @@ public class App
         int[] a = {8, 6, 7, 5, 3, 0, 9};
         int[] b = IntStream.rangeClosed(1, a.length).map(i -> a[a.length-i]).toArray();
         System.out.println(Arrays.toString(b));
-        System.out.println("ssdsddf");
+        System.out.println("ssasdsddf");
     }
 
     private static void findSecondSmallestElementInArray(int[]tablica){

@@ -1,18 +1,33 @@
 package sebaszczen;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import sebaszczen.async.TestAsync;
+import sebaszczen.domain.Car;
 import sebaszczen.domain.oneToOne.ServiceOneToOne;
-import sebaszczen.domain.sequenceStrategy.Bicycle;
+import sebaszczen.manyToOneBidirectional.Products;
+import sebaszczen.manyToOneBidirectional.Store;
+import sebaszczen.oneToMany.Dog;
+import sebaszczen.oneToMany.DogRepository;
+import sebaszczen.oneToMany.Owner;
+import sebaszczen.oneToMany.Service;
 import sebaszczen.repository.*;
 import sebaszczen.service.Transactions;
+import sun.awt.AppContext;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * Hello world!
@@ -21,6 +36,7 @@ import javax.persistence.PersistenceContext;
 
 @SpringBootApplication
 @EnableTransactionManagement
+@EnableAsync
 public class App implements CommandLineRunner
 {
 
@@ -37,11 +53,31 @@ public class App implements CommandLineRunner
     private Transactions transactions;
     @Autowired
     private ServiceOneToOne serviceOneToOne;
+    @Autowired
+    private StoreRepository storeRepository;
+    @Autowired
+    private static ApplicationContext applicationContext;
+    @Autowired
+    private Service service;
+    @Autowired
+    DogRepository dogRepository;
+    @Autowired
+    private TestAsync testAsync;
+
 
     public static void main( String[] args )
     {
-        SpringApplication.run(App.class);
+        ConfigurableApplicationContext run = SpringApplication.run(App.class);
+        Transactions bean = run.getBean(Transactions.class);
     }
+
+    private static void printBeans() {
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println("-------- bean: "+ beanDefinitionName);
+        }
+    }
+
 
     @Override
     public void run(String... strings) throws Exception {
@@ -94,7 +130,39 @@ public class App implements CommandLineRunner
 //        transactions.saveBicycleManually();
 
         //OneToOne
-        serviceOneToOne.save();
+//        serviceOneToOne.save();
+
+        //OneToManyBidirectional
+//        Products products = new Products();
+//        Products products1 = new Products();
+//        Set<Products> productsList = new HashSet<>(Arrays.asList(products, products1));
+//        Store store = new Store(productsList);
+//        products.setStore(store);
+//        products1.setStore(store);
+//        storeRepository.save(store);
+//        System.out.println("tutaj");
+//        storeRepository.findById(1l);
+//
+//        printBeans();
+//        List<Owner> ownerList = new ArrayList<>(Arrays.asList(new Owner(), new Owner(), new Owner(), new Owner()));
+//        nPlusOneProblem();
+
+//        transactions.checkHowTransactionProxyWorks();
+//        transactions.checkHowTransactionProxyWorks2();
+
+        checkIfAsynWithReturnTypeDifferentThanFutereCreateError();
+        System.out.println("hello");
+        System.out.println("wynik: "+testAsync.returnInt().get());
+    }
+
+    private void checkIfAsynWithReturnTypeDifferentThanFutereCreateError() throws InterruptedException, ExecutionException {
+        Future<Integer> integerFuture = testAsync.returnInt();
+        System.out.println("tutaj: "+ integerFuture);
+    }
+
+    private void nPlusOneProblem() {
+        service.save();
+        service.nPlusOneProblem();
     }
 
 

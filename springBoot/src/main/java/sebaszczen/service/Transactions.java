@@ -9,7 +9,7 @@ import sebaszczen.domain.sequenceStrategy.Wheel;
 import javax.persistence.*;
 
 @Service
-public class Transactions {
+public class Transactions implements Interfejs {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -72,5 +72,17 @@ public class Transactions {
 //    @Transactional
      private <T> void persist(T bicycle) {
         entityManager.persist(bicycle);
+    }
+
+    @Transactional
+    public void checkHowTransactionProxyWorks() {
+        System.out.println("adfasdf");
+        System.out.println("Sdfsdfsdf");
+    }
+
+    @Transactional
+    public void checkHowTransactionProxyWorks2() {
+        System.out.println("adfasdf");
+        System.out.println("Sdfsdfsdf");
     }
 }

@@ -4,6 +4,8 @@ import sebaszczen.zabawa.Man;
 import sebaszczen.zabawa.MyException;
 
 import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Hello world!
@@ -18,6 +20,16 @@ public class App
 //
 //        Set set = new LinkedHashSet();
 
+//        callExeption();
+
+        IntStream.range(1,6).filter(x->x>3).map(x->x*2).forEach(System.out::println);
+        int x = 0;
+        for (int i = 0; i < 14; i++) {
+            x += i;
+        }
+    }
+
+    private static void callExeption() {
         try {
             callExc(32);
         } catch (MyException e) {

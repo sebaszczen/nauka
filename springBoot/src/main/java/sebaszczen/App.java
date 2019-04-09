@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import sebaszczen.async.TestAsync;
 import sebaszczen.domain.Car;
@@ -26,8 +27,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
+import java.util.stream.Stream;
 
 /**
  * Hello world!
@@ -150,9 +151,10 @@ public class App implements CommandLineRunner
 //        transactions.checkHowTransactionProxyWorks();
 //        transactions.checkHowTransactionProxyWorks2();
 
-        checkIfAsynWithReturnTypeDifferentThanFutereCreateError();
-        System.out.println("hello");
-        System.out.println("wynik: "+testAsync.returnInt().get());
+//        checkIfAsynWithReturnTypeDifferentThanFutereCreateError();
+//        System.out.println("hello");
+//        System.out.println("wynik: "+testAsync.returnInt().get());
+
     }
 
     private void checkIfAsynWithReturnTypeDifferentThanFutereCreateError() throws InterruptedException, ExecutionException {

@@ -15,14 +15,22 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "store")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    @JoinColumn
-    private Set<Products> productsSet;
+    private List<Products> productsSet;
 
-    public Store(Set<Products> productsSet) {
+    public Store(List<Products> productsSet) {
         this.productsSet = productsSet;
     }
 
     public Store() {
+    }
+
+    public List<Products> getProductsSet() {
+        return productsSet;
+    }
+
+    public void setProductsSet(List<Products> productsSet) {
+        this.productsSet = productsSet;
     }
 }

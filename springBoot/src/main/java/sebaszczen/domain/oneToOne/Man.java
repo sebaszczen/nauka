@@ -1,16 +1,18 @@
 package sebaszczen.domain.oneToOne;
 
+import org.springframework.hateoas.ResourceSupport;
+
 import javax.persistence.*;
 
 @Entity
 public class Man {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sekwencja")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sekwencja")
     private Long id;
 
-    @MapsId
-    @OneToOne
+//    @MapsId
+    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "xxxx")
     private Girl girl;
 
@@ -20,6 +22,10 @@ public class Man {
 
     public Man(Long id) {
         this.id = id;
+    }
+
+    public Man() {
+
     }
 
     public Girl getGirl() {

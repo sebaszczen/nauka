@@ -12,9 +12,14 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import sebaszczen.async.TestAsync;
 import sebaszczen.domain.Car;
+import sebaszczen.domain.oneToOne.Girl;
+import sebaszczen.domain.oneToOne.Man;
 import sebaszczen.domain.oneToOne.ServiceOneToOne;
+import sebaszczen.domain.oneToOne.repository.ManRepository;
 import sebaszczen.manyToOneBidirectional.Products;
 import sebaszczen.manyToOneBidirectional.Store;
+import sebaszczen.manyToOneUnidirectional.House;
+import sebaszczen.manyToOneUnidirectional.Street;
 import sebaszczen.oneToMany.Dog;
 import sebaszczen.oneToMany.DogRepository;
 import sebaszczen.oneToMany.Owner;
@@ -45,7 +50,6 @@ public class App implements CommandLineRunner
     private PersonRepository personRepository;
     @Autowired
     private CarRepository carRepository;
-
     @Autowired
     private StudentRepository studentRepository;
     @Autowired
@@ -64,6 +68,8 @@ public class App implements CommandLineRunner
     DogRepository dogRepository;
     @Autowired
     private TestAsync testAsync;
+    @Autowired
+    private ManRepository manRepository;
 
 
     public static void main( String[] args )
@@ -154,6 +160,29 @@ public class App implements CommandLineRunner
 //        checkIfAsynWithReturnTypeDifferentThanFutereCreateError();
 //        System.out.println("hello");
 //        System.out.println("wynik: "+testAsync.returnInt().get());
+
+//        saveEntityWhichInheritClass();
+
+        playWithProxy();
+
+    }
+
+    private void playWithProxy() {
+        List<Products> set = new ArrayList<>(Arrays.asList(new Products(), new Products()));
+        Store store = new Store(set);
+        storeRepository.save(store);
+        storeRepository.findById(1l);
+        List<Store> all = storeRepository.findAll();
+        all.get(1).getProductsSet().get(1);
+    }
+
+    private void saveEntityWhichInheritClass() {
+        Girl girl = new Girl();
+        Man man = new Man(girl);
+        manRepository.save(man);
+        manRepository.findById(1L);
+        Optional<Man> byId = manRepository.findById(1L);
+        manRepository.save(byId.get());
 
     }
 

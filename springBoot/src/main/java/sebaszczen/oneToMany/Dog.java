@@ -2,6 +2,7 @@ package sebaszczen.oneToMany;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import sebaszczen.beanUtils.Cat;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,12 +17,20 @@ public class Dog {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @Fetch(value = FetchMode.JOIN)
     private List<Owner> ownerList;
 
-    public Dog(List<Owner> ownerList,String name) {
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private sebaszczen.oneToMany.Cat cat;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Cat2 cat2;
+
+
+    public Dog(List<Owner> ownerList, String name, sebaszczen.oneToMany.Cat cat, Cat2 cat2) {
         this.ownerList = ownerList;
         this.name = name;
+        this.cat = cat;
+        this.cat2 = cat2;
     }
 
     public Dog(long l, String sdf) {

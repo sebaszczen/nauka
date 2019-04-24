@@ -163,8 +163,10 @@ public class App implements CommandLineRunner
 
 //        saveEntityWhichInheritClass();
 
-        playWithProxy();
+//        playWithProxy();
 
+        service.studyFetch();
+        service.find();
     }
 
     private void playWithProxy() {

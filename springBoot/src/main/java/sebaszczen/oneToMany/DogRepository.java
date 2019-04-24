@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DogRepository extends JpaRepository<Dog,Long> {
 
-    @Query("Select c from Dog c join fetch c.ownerList")
+    @Query("Select distinct c from Dog c join fetch c.ownerList left join fetch c.cat left join fetch c.cat2")
     public List<Dog> findDogs();
 
     @Query("Select c,o from Dog c join fetch c.ownerList o order by c.id, o.id")

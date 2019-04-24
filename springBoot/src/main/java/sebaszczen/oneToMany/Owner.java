@@ -11,7 +11,13 @@ public class Owner {
     @GeneratedValue
     private Long id;
 
+    String name;
+
     public Owner() {
+    }
+
+    public Owner(String name) {
+        this.name = name;
     }
 
     @Override

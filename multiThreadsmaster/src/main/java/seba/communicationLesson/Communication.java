@@ -24,4 +24,15 @@ public class Communication {
             return tmp;
         }
     }
+
+    public static void main(String[] args) {
+        Runnable x= new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("sdf");
+            }
+        };
+        Thread thread = new Thread(x);
+        thread.start();
+    }
 }

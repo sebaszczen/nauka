@@ -1,5 +1,8 @@
 package sebaszczen.mongodb;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -7,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import sebaszczen.mongodb.configuration.MongoConfig;
 import sebaszczen.mongodb.domain.Player;
 import sebaszczen.mongodb.repository.PlayerRepository;
 import sebaszczen.mongodb.service.PlayerService;
@@ -26,12 +30,24 @@ public class MongodbApplication implements CommandLineRunner {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
+	static Logger logger = LoggerFactory.getLogger(MongodbApplication.class);
+
 	public static void main(String[] args) {
 		SpringApplication.run(MongodbApplication.class, args);
+
+
 	}
+
 
 	@Override
 	public void run(String... args) throws Exception {
+		MDC.put("imie","bartek");
+		for (int i = 0; i < 10; i++) {
+
+			logger.info("tutaj");
+		}
+
+
 //		for (int i = 0; i < 10; i++) {
 //			playerService.savePlayer(new Player("ciezkilogin"+i, "hash"+i,	 "emaail"+i,i*2));
 //		}
@@ -39,7 +55,7 @@ public class MongodbApplication implements CommandLineRunner {
 //		findPlayerByName();
 //		documentQueryIs("emaail2");
 //		documentQueryRegexEmailEndWith2();
-		documentQueryLtAndGtAge(3, 12);
+//		documentQueryLtAndGtAge(3, 12);
 
 	}
 

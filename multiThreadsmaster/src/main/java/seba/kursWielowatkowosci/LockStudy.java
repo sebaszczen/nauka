@@ -1,5 +1,6 @@
 package seba.kursWielowatkowosci;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -10,6 +11,7 @@ public class LockStudy {
         Counter counter2 = new Counter("counter2");
         Counter counter3 = new Counter("counter3");
         Counter counter4 = new Counter("counter4");
+        Counter counter5 = new Counter("counter5");
         Runnable runnable=new Runnable() {
             @Override
             public void run() {
@@ -36,9 +38,16 @@ public class LockStudy {
         });
 
         createThreads(counter4, ()-> {
-            System.out.println("incerement3");
+            System.out.println("incerement4");
             for (int i = 0; i < 5; i++) {
                 counter4.inrement4(lock);
+            }
+        });
+
+        createThreads(counter5, ()-> {
+            System.out.println("incerement5");
+            for (int i = 0; i < 5; i++) {
+                counter5.inrement5(lock);
             }
         });
     }
@@ -84,6 +93,7 @@ public class LockStudy {
         public void inrement3(Lock lock) {
             try {
                 lock.lock();
+                System.out.println(Thread.currentThread().getName()+" got lock");
                 Thread.sleep(1_000);
                 howMany++;
             } catch (InterruptedException e) {
@@ -98,6 +108,31 @@ public class LockStudy {
             boolean b = lock.tryLock();
             if (b) {
                 try {
+                    System.out.println(Thread.currentThread().getName()+" got lock");
+                    Thread.sleep(1_000);
+                    howMany++;
+                }
+            catch(InterruptedException e){
+                e.printStackTrace();
+            } finally{
+                lock.unlock();
+            }
+        }
+            else {
+                System.out.println("sekcja krytyczna zajeta");
+            }
+        }
+
+        public void inrement5(Lock lock) {
+            boolean b = false;
+            try {
+                b = lock.tryLock(5, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (b) {
+                try {
+                    System.out.println(Thread.currentThread().getName()+" got lock");
                     Thread.sleep(1_000);
                     howMany++;
                 }

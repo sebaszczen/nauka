@@ -1,6 +1,5 @@
 package maciek.multiTh.conc.semaphore.permitAB;
 
-import org.w3c.dom.css.Counter;
 
 import java.util.concurrent.Semaphore;
 

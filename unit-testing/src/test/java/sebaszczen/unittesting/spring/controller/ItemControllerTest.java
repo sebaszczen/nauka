@@ -17,7 +17,6 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import sebaszczen.unittesting.spring.model.Item;
 import sebaszczen.unittesting.spring.services.ItemBusinessService;
-import sun.plugin.javascript.JSObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -72,6 +71,5 @@ public class ItemControllerTest {
                 "[{id:1,name:item1,price:22,quantity:2},{id:2,name:item2,price:22,quantity:2}]", mvcResult.getResponse().getContentAsString(), false);
 
     }
-
 
 }

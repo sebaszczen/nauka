@@ -30,7 +30,7 @@ public class MongodbApplication implements CommandLineRunner {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
-	static Logger logger = LoggerFactory.getLogger(MongodbApplication.class);
+//	static Logger logger = LoggerFactory.getLogger(MongodbApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(MongodbApplication.class, args);
@@ -41,16 +41,12 @@ public class MongodbApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		MDC.put("imie","bartek");
 		for (int i = 0; i < 10; i++) {
-
-			logger.info("tutaj");
+			playerService.savePlayer(new Player("ciezkilogin"+i,
+					"hash"+i,	 "emaail"+i,i*2, new Player().new IdCard(i, "green")));
 		}
 
-
-//		for (int i = 0; i < 10; i++) {
-//			playerService.savePlayer(new Player("ciezkilogin"+i, "hash"+i,	 "emaail"+i,i*2));
-//		}
+		playerRepository.findAll().forEach(System.out::println);
 //
 //		findPlayerByName();
 //		documentQueryIs("emaail2");

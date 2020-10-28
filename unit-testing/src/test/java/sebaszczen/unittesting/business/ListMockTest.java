@@ -54,12 +54,14 @@ public class ListMockTest {
         Mockito.verify(mock,  atLeast(1)).get(222);
         verify(mock, never()).get(3);
         verify(mock,times(2)).get(222);
+
     }
 
     @Test
     public void argumentCapuring() {
         //SUT
-        mock.add("test");
+//        mock.add("test");
+        mock.add("xx");
         ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
         verify(mock).add(argumentCaptor.capture());
         assertEquals("test",argumentCaptor.getValue());
@@ -125,4 +127,8 @@ public class ListMockTest {
         verify(arrayListSpy).add(11);
 
     }
+
 }
+
+
+

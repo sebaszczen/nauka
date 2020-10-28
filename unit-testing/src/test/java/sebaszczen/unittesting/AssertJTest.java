@@ -2,9 +2,14 @@ package sebaszczen.unittesting;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.Writer;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,4 +33,34 @@ public class AssertJTest {
 //        assertThat("abc",startsWith("a"));
 //        assertThat("abc",endsWith("bc"));
     }
+
+    @Test
+    public void name() {
+        A a = new B();
+        System.out.println(((B) a).getName());
+        System.out.println(((C) a).nameC());
+        System.out.println(((A) a).getName());
+
+        ArrayList<Integer> adj[] = new ArrayList[2];
+
+    }
+
+    interface A {
+        String getName();
+    }
+
+    class B extends C implements A{
+        @Override
+        public String getName() {
+            return "class a";
+        }
+    }
+
+    class C {
+        String nameC() {
+            return "class c";
+        }
+    }
+
+
 }

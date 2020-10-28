@@ -30,4 +30,18 @@ public class SomeBusinessImpl {
         }
         return sum;
     }
+
+    public static void main(String[] args) {
+        String name = "Xx";
+
+        switch (name) {
+            case "xx":
+                System.out.println("xx");
+                break;
+            case "sdf" :
+                System.out.printf("Super");
+                break;
+        }
+        System.out.println("ssssss");
+    }
 }

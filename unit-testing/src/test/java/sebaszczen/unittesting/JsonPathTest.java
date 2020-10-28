@@ -4,6 +4,7 @@ import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,4 +31,7 @@ public class JsonPathTest {
         System.out.println(parse.read("$.[?(@.name=='x2')]").toString());
         System.out.println(parse.read("$.[?(@.quantity=='22')]").toString());
     }
+
+
+
 }
